@@ -10,8 +10,8 @@ RUN python -m pip install --upgrade pip
 RUN apk update && apk upgrade -i -a --update-cache
 
 # Create a non-root user
-RUN addgroup -g 1001 appgroup && \
-    adduser -u 1001 -G appgroup -s /bin/sh -D appuser
+RUN addgroup -g 1003 appgroup && \
+    adduser -u 1003 -G appgroup -s /bin/sh -D appuser
 
 # Create and set ownership of the working directory
 RUN mkdir -p /usr/src/app && chown -R appuser:appgroup /usr/src/app
